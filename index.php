@@ -18,7 +18,8 @@ if(!$link){
 //   echo 'failed!';
 // }
 
-$query = "SELECT * FROM student";
+// $query = "SELECT * FROM student";
+$query = "SELECT * FROM student ORDER BY id ASC";
 $result = mysqli_query($link, $query);
 
 if(mysqli_num_rows($result) > 0){
