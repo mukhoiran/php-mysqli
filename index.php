@@ -9,7 +9,7 @@ if(!$link){
   die('error happen'.mysqli_connect_error());
 }
 
-//First query
+#First query
 // $query = 'CREATE DATABASE leraning123';
 
 // if(mysqli_query($link, $query)){
@@ -18,14 +18,33 @@ if(!$link){
 //   echo 'failed!';
 // }
 
+#Select Query
 // $query = "SELECT * FROM student";
-$query = "SELECT * FROM student ORDER BY id ASC";
-$result = mysqli_query($link, $query);
+// $query = "SELECT * FROM student ORDER BY id ASC";
+// $result = mysqli_query($link, $query);
+//
+// if(mysqli_num_rows($result) > 0){
+//   while($data = mysqli_fetch_assoc($result)){
+//     echo $data['name']."<br>";
+//   }
+// }
 
-if(mysqli_num_rows($result) > 0){
-  while($data = mysqli_fetch_assoc($result)){
-    echo $data['name']."<br>";
-  }
+
+#Insert Into
+// single insert
+$query = "INSERT INTO student(name,age,address)
+          VALUES ('Hadi',23,'Tangerang');";
+
+// if(mysqli_query($link,$query)){
+//   echo "Insert successfully";
+// }
+
+//multiple insert (also get data from variable query)
+$query .= "INSERT INTO student(name,age,address)
+          VALUES ('Hamdan',22,'Semarang')";
+
+if(mysqli_multi_query($link,$query)){
+  echo "Insert successfully";
 }
 
 //close connection
