@@ -48,12 +48,19 @@ if(!$link){
 // }
 
 #delete row
-$query = "DELETE FROM student WHERE id = 6";
+// $query = "DELETE FROM student WHERE id = 6";
 // $query = "DELETE FROM student WHERE id IN (1,2)";
 // $query = "DELETE FROM student BETWEEN 3 AND 7"
 
-if(mysqli_multi_query($link,$query)){
-  echo "Delete successfully";
+// if(mysqli_query($link,$query)){
+//   echo "Delete successfully";
+// }
+
+#update row
+$query = "UPDATE student SET name = 'Heru' WHERE id = 3";
+
+if(mysqli_query($link,$query)){
+  echo "Update successfully";
 }
 
 //close connection
