@@ -11,12 +11,21 @@ if(!$link){
 
 //First query
 // $query = 'CREATE DATABASE leraning123';
-//
+
 // if(mysqli_query($link, $query)){
-//   echo 'database create successfully';
+//   echo 'created database successfully';
 // }else{
 //   echo 'failed!';
 // }
+
+$query = "SELECT * FROM student";
+$result = mysqli_query($link, $query);
+
+if(mysqli_num_rows($result) > 0){
+  while($data = mysqli_fetch_assoc($result)){
+    echo $data['name']."<br>";
+  }
+}
 
 //close connection
 mysqli_close($link);
