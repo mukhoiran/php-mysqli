@@ -32,19 +32,28 @@ if(!$link){
 
 #Insert Into
 // single insert
-$query = "INSERT INTO student(name,age,address)
-          VALUES ('Hadi',23,'Tangerang');";
+// $query = "INSERT INTO student(name,age,address)
+//           VALUES ('Hadi',23,'Tangerang');";
 
 // if(mysqli_query($link,$query)){
 //   echo "Insert successfully";
 // }
 
 //multiple insert (also get data from variable query)
-$query .= "INSERT INTO student(name,age,address)
-          VALUES ('Hamdan',22,'Semarang')";
+// $query .= "INSERT INTO student(name,age,address)
+//           VALUES ('Hamdan',22,'Semarang')";
+
+// if(mysqli_multi_query($link,$query)){
+//   echo "Insert successfully";
+// }
+
+#delete row
+$query = "DELETE FROM student WHERE id = 6";
+// $query = "DELETE FROM student WHERE id IN (1,2)";
+// $query = "DELETE FROM student BETWEEN 3 AND 7"
 
 if(mysqli_multi_query($link,$query)){
-  echo "Insert successfully";
+  echo "Delete successfully";
 }
 
 //close connection
