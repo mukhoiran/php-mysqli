@@ -1,2 +1,2 @@
 # php-mysqli
-Documentation PHP with database mysqli
+connecting database with PHP mysqli
